@@ -1,0 +1,11 @@
+---
+- name: Create folder
+  hosts: ip_address
+  gather_facts: false
+  
+  tasks:
+   - name: Create folder
+     file: 
+       path: ~/hello
+       state: directory
+       mode: "777"
