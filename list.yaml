@@ -1,0 +1,17 @@
+---
+- name: to install a list of packages using list
+  host: local_host
+  gather_facts: true
+  become: true
+
+  vars:
+    packages:
+      - docker
+      - java-1.8.0-openjdk
+
+
+  tasks:
+   - name: install packages
+     package:
+       name: "{{ packages }}"
+       state: present
