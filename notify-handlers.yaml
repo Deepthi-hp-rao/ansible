@@ -1,0 +1,17 @@
+---
+name: Notify and Handler example
+host: ip_address
+become: true
+
+tasks:
+  - name: to install the package
+    package:
+      name: telnet
+      state: present
+    notify: 
+      - Restart service
+handlers:
+  - name: Restart service
+    ansible.builtin.service:
+      name: telnet
+      state: started
