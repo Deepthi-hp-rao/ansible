@@ -6,6 +6,6 @@
   tasks:
    - name: Create folder
      file: 
-       path: /Users/deepthi/Documents
+       path: /Users/deepthi/Documents/hello
        state: directory
        mode: "777"
