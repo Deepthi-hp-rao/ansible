@@ -1,6 +1,6 @@
 ---
 name: Notify and Handler example
-host: ip_address
+host: localhost
 become: true
 
 tasks:
