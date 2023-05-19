@@ -1,11 +1,11 @@
 ---
 - name: Create folder
-  hosts: ip_address
+  hosts: localhost
   gather_facts: false
   
   tasks:
    - name: Create folder
      file: 
-       path: ~/hello
+       path: /Users/deepthi/Documents
        state: directory
        mode: "777"
