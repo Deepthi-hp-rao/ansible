@@ -1,11 +1,11 @@
 ---
 - name: Create folder
-  hosts: localhost
+  hosts: ec2
   gather_facts: false
   
   tasks:
    - name: Create folder
      file: 
-       path: /Users/deepthi/Documents/hello
+       path: /Users/deepthi/Documents/hello1
        state: directory
        mode: "777"
