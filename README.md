@@ -4,7 +4,7 @@ Ansible is an open-source configuration management, software provisioning, and a
 
 ## Ansible cmds
 
-'''
+'''bash
 ansible --version
 ansible all -i inventory_file_name --list-hosts
 ansible grp_name -i inventory_file_name --list-hosts
