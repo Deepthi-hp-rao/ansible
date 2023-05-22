@@ -4,8 +4,11 @@
   gather_facts: false
   
   tasks:
-   - name: Create folder
-     file: 
-       path: ~/hello1
-       state: directory
-       mode: "777"
+    - name: Create folder
+      file: 
+        path: ~/Ex2
+        state: directory
+        mode: "777"
+    - name: find ~/ files 
+      ansible.builtin.find:
+        paths: ~/

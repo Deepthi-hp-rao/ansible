@@ -1,0 +1,11 @@
+---
+- name: Remove package
+  hosts: ec2
+  gather_facts: true
+  become: true
+
+  tasks:
+    - name: Remove the Apache package
+      ansible.builtin.yum:
+        name: httpd
+        state: absent

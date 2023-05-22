@@ -1,14 +1,14 @@
 ---
-- name: Notify and Handler example
+- name: Verify apache installation
   hosts: ec2
   become: true
   gather_facts: true
 
   tasks:
-    - name: Install the latest version of Apache
-      ansible.builtin.yum:
+    - name: to install the package
+      package:
         name: httpd
-        state: latest
+        state: present
       notify:
         - Restart service
   handlers:

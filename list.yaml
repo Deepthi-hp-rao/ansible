@@ -1,17 +1,18 @@
 ---
 - name: to install a list of packages using list
-  host: local_host
+  hosts: ec2
   gather_facts: true
   become: true
 
   vars:
     packages:
       - docker
-      - java-1.8.0-openjdk
-
+      - nginx
+      - telnet
+      # - java-1.8.0-openjdk
 
   tasks:
-   - name: install packages
-     package:
-       name: "{{ packages }}"
-       state: present
+    - name: install packages
+      package:
+        name: "{{ packages }}"
+        state: present
