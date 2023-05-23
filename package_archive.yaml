@@ -1,0 +1,17 @@
+---
+- name: Package and archive example
+  hosts: ec2
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: nmap install
+      package:
+        name: nmap
+        state: present
+
+    - name: create an XZ archive
+      archive:
+        path: /home.
+        dest: /tmp/home.tar.xz
+        format: bz2

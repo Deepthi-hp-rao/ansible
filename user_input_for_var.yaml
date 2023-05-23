@@ -1,0 +1,11 @@
+---
+- name: prompt example
+  hosts: ec2
+  vars_prompt:
+    - name: username
+      prompt: what is your name?
+      private: no
+  tasks:
+    - name: Greet the user
+      debug:
+        msg: welcome {{ username }}

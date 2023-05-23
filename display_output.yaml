@@ -1,0 +1,17 @@
+---
+- name: display output
+  hosts: ec2
+  gather_facts: true
+
+  tasks:
+    - name: execute command
+      command: free -h
+      register: free_cmd
+
+    - name: display free cmd O/P
+      debug:
+        msg: "{{ free_cmd.stdout }}"
+
+    - name: display IP address of all node
+      debug:
+        msg: "{{ ansible_facts.default_ipv4.address }}"
